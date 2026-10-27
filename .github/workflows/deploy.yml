@@ -1,0 +1,14 @@
+# Checks, builds and publishes this internal tool. The logic lives in the shared core.
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  internal:
+    uses: hansalbertisaksson/test-core/.github/workflows/prototype.yml@main
+    permissions:
+      contents: write
